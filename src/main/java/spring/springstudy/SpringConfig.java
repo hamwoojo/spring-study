@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import spring.springstudy.repository.MemoryMemberRepository;
 import spring.springstudy.service.MemberService;
 
-@Configuration
+//@Configuration
 public class SpringConfig {
-    @Bean
+//    @Bean
     public MemberService memberService(){
         return new MemberService(memberRepository());
     }
 
-    @Bean
+//    @Bean
     public MemoryMemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
