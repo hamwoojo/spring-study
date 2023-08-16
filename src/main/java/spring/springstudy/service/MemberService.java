@@ -3,17 +3,18 @@ package spring.springstudy.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.springstudy.domain.Member;
+import spring.springstudy.repository.MemberRepository;
 import spring.springstudy.repository.MemoryMemberRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Transactional
 public class MemberService {
-    private final MemoryMemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
-    @Autowired
-    public MemberService(MemoryMemberRepository memberRepository) {
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
